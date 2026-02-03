@@ -1,1 +1,227 @@
 @import "tailwindcss";
+
+@theme {
+  /* === JOYERÍA AVALON: BRUTALISMO + WABI-SABI === */
+  
+  /* Paleta de colores */
+  --color-carbon: #2b2b2b;
+  --color-rojo: #74322a;
+  --color-plata: #bebebe;
+  --color-blanco: #ffffff;
+  
+  /* Familias tipográficas */
+  --font-family-display: "Cinzel", serif;
+  --font-family-body: "Montserrat", sans-serif;
+  
+  /* Espaciado base */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 2rem;
+  --spacing-lg: 4rem;
+  --spacing-xl: 6rem;
+  
+  /* Sombras duras (brutalismo - NO suaves) */
+  --shadow-brutal-sm: 4px 4px 0 var(--color-carbon);
+  --shadow-brutal-md: 8px 8px 0 var(--color-carbon);
+  --shadow-brutal-lg: 12px 12px 0 var(--color-carbon);
+  --shadow-brutal-xl: 16px 16px 0 var(--color-carbon);
+  
+  /* Transiciones */
+  --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-base: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* === RESET Y BASE === */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-family-body);
+  background-color: var(--color-carbon);
+  color: var(--color-blanco);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* === TIPOGRAFÍA === */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-family-display);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+}
+
+h1 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+}
+
+h2 {
+  font-size: clamp(2rem, 4vw, 3rem);
+}
+
+h3 {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+/* === ANTI-ROUNDED CORNERS (Principio brutalista) === */
+button,
+input,
+textarea,
+select,
+img,
+.card,
+.btn,
+[role="button"] {
+  border-radius: 0 !important;
+}
+
+/* === LINKS === */
+a {
+  color: var(--color-plata);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+a:hover {
+  color: var(--color-blanco);
+}
+
+a:focus-visible {
+  outline: 3px solid var(--color-rojo);
+  outline-offset: 2px;
+}
+
+/* === BOTONES BASE === */
+.btn {
+  padding: 1rem 2rem;
+  border: 3px solid var(--color-carbon);
+  background: var(--color-rojo);
+  color: var(--color-blanco);
+  font-family: var(--font-family-display);
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  display: inline-block;
+}
+
+.btn:hover {
+  background: var(--color-carbon);
+  border-color: var(--color-rojo);
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 var(--color-rojo);
+}
+
+.btn:active {
+  transform: translate(0, 0);
+  box-shadow: 2px 2px 0 var(--color-rojo);
+}
+
+.btn-secondary {
+  background: var(--color-plata);
+  color: var(--color-carbon);
+  border-color: var(--color-carbon);
+}
+
+.btn-secondary:hover {
+  background: var(--color-blanco);
+  border-color: var(--color-carbon);
+}
+
+/* === UTILIDADES BRUTALISTAS === */
+.border-brutal {
+  border: 3px solid var(--color-carbon);
+}
+
+.border-brutal-thick {
+  border: 5px solid var(--color-carbon);
+}
+
+.shadow-brutal {
+  box-shadow: var(--shadow-brutal-md);
+}
+
+.shadow-brutal-lg {
+  box-shadow: var(--shadow-brutal-lg);
+}
+
+.shadow-brutal-hover {
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.shadow-brutal-hover:hover {
+  transform: translate(-4px, -4px);
+  box-shadow: var(--shadow-brutal-xl);
+}
+
+/* === CONTAINER === */
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 var(--spacing-sm);
+  }
+}
+
+/* === GRID === */
+.grid-products {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: var(--spacing-md);
+}
+
+@media (max-width: 768px) {
+  .grid-products {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-sm);
+  }
+}
+
+/* === FOCUS VISIBLE (Accesibilidad) === */
+*:focus-visible {
+  outline: 3px solid var(--color-rojo);
+  outline-offset: 2px;
+}
+
+/* === ANIMACIONES SUTILES (Wabi-Sabi) === */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn var(--transition-base) ease-out;
+}
+
+/* === SELECCIÓN DE TEXTO === */
+::selection {
+  background-color: var(--color-rojo);
+  color: var(--color-blanco);
+}

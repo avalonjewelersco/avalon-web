@@ -1,0 +1,99 @@
+---
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="bg-carbon border-t-[5px] border-plata mt-auto">
+	<div class="container mx-auto px-4 md:px-8 py-12 md:py-16">
+		<!-- Grid principal -->
+		<div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+			<!-- Columna 1: Brand -->
+			<div>
+				<h3 class="font-display text-2xl text-blanco mb-4">
+					JOYERÍA AVALON
+				</h3>
+				<p class="text-plata text-sm leading-relaxed mb-6">
+					Memento Vive. Joyería artesanal inspirada en la filosofía memento mori. 
+					Cada pieza es una reflexión sobre la mortalidad y la belleza efímera.
+				</p>
+				<p class="text-plata text-xs italic">
+					メメント　ヴィヴェ<br />
+					<span class="text-xs">Recuerda Vivir</span>
+				</p>
+			</div>
+
+			<!-- Columna 2: Enlaces -->
+			<div>
+				<h4 class="font-display text-lg text-blanco mb-4 uppercase">
+					Navegación
+				</h4>
+				<ul class="space-y-2 text-sm">
+					<li>
+						<a href="/" class="text-plata hover:text-blanco transition-colors">
+							Inicio
+						</a>
+					</li>
+					<li>
+						<a href="/catalogo" class="text-plata hover:text-blanco transition-colors">
+							Catálogo
+						</a>
+					</li>
+					<li>
+						<a href="/acerca" class="text-plata hover:text-blanco transition-colors">
+							Acerca de Nosotros
+						</a>
+					</li>
+					<li>
+						<a href="/como-comprar" class="text-plata hover:text-blanco transition-colors">
+							Cómo Comprar
+						</a>
+					</li>
+					<li>
+						<a href="/contacto" class="text-plata hover:text-blanco transition-colors">
+							Contacto
+						</a>
+					</li>
+				</ul>
+			</div>
+
+			<!-- Columna 3: Contacto -->
+			<div>
+				<h4 class="font-display text-lg text-blanco mb-4 uppercase">
+					Contacto
+				</h4>
+				<ul class="space-y-3 text-sm text-plata">
+					<li class="flex items-start gap-2">
+						<svg class="w-5 h-5 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="square" stroke-linejoin="miter" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+						</svg>
+						<a href="mailto:contacto@joyeriaavalon.com" class="hover:text-blanco transition-colors">
+							contacto@joyeriaavalon.com
+						</a>
+					</li>
+					<li class="flex items-start gap-2">
+						<svg class="w-5 h-5 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="square" stroke-linejoin="miter" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+							<path stroke-linecap="square" stroke-linejoin="miter" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+						</svg>
+						<span>
+							Ciudad de México, México<br/>
+							<span class="text-xs">Entrega personal zona CDMX</span>
+						</span>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<!-- Separador -->
+		<div class="border-t-[3px] border-plata my-8"></div>
+
+		<!-- Copyright -->
+		<div class="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-plata">
+			<p>
+				&copy; {currentYear} Joyería Avalon. Todos los derechos reservados.
+			</p>
+			<p class="text-xs italic">
+				Diseño brutalista · Wabi-Sabi
+			</p>
+		</div>
+	</div>
+</footer>

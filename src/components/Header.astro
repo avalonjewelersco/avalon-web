@@ -1,0 +1,116 @@
+---
+---
+
+<header class="bg-carbon border-b-[5px] border-blanco sticky top-0 z-50">
+	<nav class="container mx-auto px-4 md:px-8 py-4 md:py-6">
+		<div class="flex items-center justify-between">
+			<!-- Logo -->
+			<a href="/" class="flex items-center gap-3 hover:opacity-80 transition-opacity">
+				<img 
+					src="/images/logo/avalon-logo.png" 
+					alt="Joyería Avalon Logo" 
+					class="h-10 md:h-12 w-auto"
+				/>
+				<div class="hidden md:block">
+					<h1 class="text-blanco font-display text-2xl font-bold tracking-wide">
+						AVALON
+					</h1>
+					<p class="text-plata text-xs uppercase tracking-widest">
+						メメント　ヴィヴェ
+					</p>
+				</div>
+			</a>
+
+			<!-- Desktop Navigation -->
+			<ul class="hidden md:flex items-center gap-8 font-display text-sm uppercase tracking-wider">
+				<li>
+					<a href="/" class="text-plata hover:text-blanco transition-colors">
+						Inicio
+					</a>
+				</li>
+				<li>
+					<a href="/catalogo" class="text-plata hover:text-blanco transition-colors">
+						Catálogo
+					</a>
+				</li>
+				<li>
+					<a href="/acerca" class="text-plata hover:text-blanco transition-colors">
+						Acerca
+					</a>
+				</li>
+				<li>
+					<a href="/como-comprar" class="text-plata hover:text-blanco transition-colors">
+						Cómo Comprar
+					</a>
+				</li>
+				<li>
+					<a href="/contacto" class="text-plata hover:text-blanco transition-colors">
+						Contacto
+					</a>
+				</li>
+			</ul>
+
+			<!-- Mobile Menu Button -->
+			<button 
+				id="mobile-menu-toggle"
+				class="md:hidden text-blanco p-2 hover:text-rojo transition-colors"
+				aria-label="Abrir menú"
+			>
+				<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+					<path stroke-linecap="square" stroke-linejoin="miter" stroke-width="3" d="M4 6h16M4 12h16M4 18h16" />
+				</svg>
+			</button>
+		</div>
+
+		<!-- Mobile Menu (Hidden by default) -->
+		<div 
+			id="mobile-menu" 
+			class="hidden md:hidden mt-6 border-t-[3px] border-plata pt-6"
+		>
+			<ul class="flex flex-col gap-4 font-display text-base uppercase tracking-wider">
+				<li>
+					<a href="/" class="block text-plata hover:text-blanco transition-colors py-2">
+						Inicio
+					</a>
+				</li>
+				<li>
+					<a href="/catalogo" class="block text-plata hover:text-blanco transition-colors py-2">
+						Catálogo
+					</a>
+				</li>
+				<li>
+					<a href="/acerca" class="block text-plata hover:text-blanco transition-colors py-2">
+						Acerca
+					</a>
+				</li>
+				<li>
+					<a href="/como-comprar" class="block text-plata hover:text-blanco transition-colors py-2">
+						Cómo Comprar
+					</a>
+				</li>
+				<li>
+					<a href="/contacto" class="block text-plata hover:text-blanco transition-colors py-2">
+						Contacto
+					</a>
+				</li>
+			</ul>
+		</div>
+	</nav>
+</header>
+
+<script>
+	// Mobile menu toggle
+	const toggleButton = document.getElementById('mobile-menu-toggle');
+	const mobileMenu = document.getElementById('mobile-menu');
+
+	toggleButton?.addEventListener('click', () => {
+		mobileMenu?.classList.toggle('hidden');
+	});
+</script>
+
+<style>
+	/* Asegurar que el header sea opaco */
+	header {
+		background-color: var(--color-carbon);
+	}
+</style>
